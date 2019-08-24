@@ -14,7 +14,8 @@ public class TouchControl : MonoBehaviour
 
     private void Start()
     {
-
+        Debug.Log(Screen.width);
+        Debug.Log(Screen.height);
     }
 
     void Update()
@@ -48,10 +49,29 @@ public class TouchControl : MonoBehaviour
 
             Vector2 vector = Vector3.Normalize(new Vector2(twoPos.x - firstPos.x, twoPos.y - firstPos.y));
 
-            Debug.Log(vector);
+            if (Camera.main.WorldToScreenPoint(transform.position).x < Screen.width)
+            {
+                if (vector.x > 0)
+                    moveX += speed * Time.deltaTime * vector.x;
+            }
 
-            moveX += speed * Time.deltaTime * vector.x;
-            moveY += speed * Time.deltaTime * vector.y;
+            if (Camera.main.WorldToScreenPoint(transform.position).y < Screen.height)
+            {
+                if (vector.y > 0)
+                    moveY += speed * Time.deltaTime * vector.y;
+            }
+
+            if (Camera.main.WorldToScreenPoint(transform.position).x > 0)
+            {
+                if (vector.x < 0)
+                    moveX += speed * Time.deltaTime * vector.x;
+            }
+
+            if (Camera.main.WorldToScreenPoint(transform.position).y > 0)
+            {
+                if (vector.y < 0)
+                    moveY += speed * Time.deltaTime * vector.y;
+            }
 
             //改变物体坐标 
             this.transform.Translate(moveX, moveY, 0);
