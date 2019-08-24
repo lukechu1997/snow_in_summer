@@ -22,17 +22,19 @@ public class TouchControl : MonoBehaviour
 #if UNITY_EDITOR
         #region 滑鼠
 
-        if (Input.GetMouseButtonDown(0))
+        if (!isMouseDown)
         {
-            //获取接触屏幕的坐标 
-            firstPos = Input.mousePosition;
-            isMouseDown = true;
+            if (Input.GetMouseButtonDown(0))
+            {
+                //获取接触屏幕的坐标 
+                firstPos = Input.mousePosition;
+                isMouseDown = true;
+            }
         }
 
         if (Input.GetMouseButtonUp(0))
         {
             //获取在屏幕上移动后的坐标 
-            twoPos = Input.mousePosition;
             isMouseDown = false;
         }
 
@@ -42,6 +44,8 @@ public class TouchControl : MonoBehaviour
         //判断移动                 
         if (isMouseDown)
         {
+            twoPos = Input.mousePosition;
+
             Vector2 vector = Vector3.Normalize(new Vector2(twoPos.x - firstPos.x, twoPos.y - firstPos.y));
 
             Debug.Log(vector);
