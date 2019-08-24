@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class TouchControl : MonoBehaviour
 {
-    public Vector2 firstPos;//接触时的position 
+    private Vector2 firstPos;//接触时的position 
 
-    public Vector2 twoPos;//移动后的position 
+    private Vector2 twoPos;//移动后的position 
 
     public float speed = 1.0f;        //移动速度 
 
@@ -14,8 +14,6 @@ public class TouchControl : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log(Screen.width);
-        Debug.Log(Screen.height);
     }
 
     void Update()
