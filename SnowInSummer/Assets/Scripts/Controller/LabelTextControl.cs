@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class LabelTextControl : MonoBehaviour
 {
     // Start is called before the first frame update
-    string[] text = { "前情提要", "第一關 遊戲規則" };
+    string[] text = { "前情鋪陳", "第一關 遊戲規則" };
 
     private int index = 0;
 
