@@ -14,6 +14,8 @@ public class npcBehave : MonoBehaviour
 
     private bool isCollider;
 
+    public Rigidbody2D rigid;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,7 +37,7 @@ public class npcBehave : MonoBehaviour
         moveX += speed * Time.deltaTime * vector.x;
         moveY += speed * Time.deltaTime * vector.y;
 
-        this.transform.Translate(moveX, moveY, 0);
+        this.rigid.AddForce(new Vector2(moveX, moveY)*50);
 
         //Debug.Log();
     }
