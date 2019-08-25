@@ -10,16 +10,16 @@ public class npcBehave : MonoBehaviour
 
     private Vector2 npcPos;
 
-    public float speed = 0.8f;
-
     private bool isCollider;
+
+    private float speed = 1;
 
     public Rigidbody2D rigid;
 
     // Start is called before the first frame update
     void Start()
     {
-        speed = Random.Range(0.3f, 1);
+        //speed = Random.Range(0.3f, 1);
     }
 
     // Update is called once per frame
@@ -37,7 +37,7 @@ public class npcBehave : MonoBehaviour
         moveX += speed * Time.deltaTime * vector.x;
         moveY += speed * Time.deltaTime * vector.y;
 
-        this.rigid.AddForce(new Vector2(moveX, moveY)*50);
+        this.rigid.AddForce(new Vector2(moveX, moveY) * 80);
 
         //Debug.Log();
     }

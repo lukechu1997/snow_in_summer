@@ -24,8 +24,6 @@ public class CameraControl : MonoBehaviour
 
     public float speed = 1.0f;        //移动速度 
 
-    private bool isMouseDown = false;
-
     // Start is called before the first frame update
     void Start()
     {
