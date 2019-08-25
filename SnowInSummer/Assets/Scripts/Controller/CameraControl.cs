@@ -41,7 +41,7 @@ public class CameraControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(MainCharater.transform.position.x);
+        //Debug.Log(MainCharater.transform.position.x);
 
         if (!(this.transform.position.x <= xMin) || !(this.transform.position.x >= xMax))
         {
